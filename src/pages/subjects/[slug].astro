@@ -1,0 +1,49 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Subjectinfo from "@components/ui/subjectinfo.astro";
+import Layout from "@layouts/Layout.astro";
+import subjects from "../../data/subjects.json";
+
+// Generate a new path for every collection entry
+export async function getStaticPaths() {
+  return subjects.map((subject) => ({
+    params: { slug: subject.slug },
+    props: { subject },
+  }));
+}
+
+const { subject } = Astro.props;
+
+let currentSemesterSubjects = subjects.filter(
+  (subject) => subject.semester_id === subject.id
+);
+---
+
+<Layout title={subject.title}>
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">{subject.title}</Fragment>
+      <Fragment slot="desc"></Fragment>
+    </Sectionhead>
+    <div class="grid grid-cols-1 lg:grid-cols-3 mt-16">
+      <main class="container mx-auto col-span-2">
+        <a
+          class="relative flex items-start border-l-4 border-green-600 justify-between align-between rounded-xl p-4 m-4 shadow-lg hover:shadow-xl sm:p-6 lg:p-8"
+          href={`/syllabus/${subject.slug}`}>
+          <div class="flex py-4 text-gray-500 gap-5">
+            <h1 class="text-xl font-bold text-gray-600">{1}.</h1>
+            <h3 class="text-lg font-bold text-gray-600 sm:text-xl">Syllabus</h3>
+          </div>
+        </a>
+      </main>
+      <div
+        class="relative border-t-4 border-blue-600 rounded-xl p-4 m-4 shadow-lg hover:shadow-xl sm:p-6 lg:p-8">
+        <div class="pl-5 pb-5 font-bold text-gray-600">Details</div>
+        <dl class="border-t">
+          <Subjectinfo data={subject} />
+        </dl>
+      </div>
+    </div>
+  </Container>
+</Layout>
