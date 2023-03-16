@@ -1,0 +1,38 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import subjects from "../../data/subjects.json";
+
+// Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const syllabusEntries = await getCollection("syllabus", ({ data }) => {
+    return !data.draft;
+  });
+  return syllabusEntries.map((syllabus) => ({
+    params: { slug: syllabus.slug },
+    props: { syllabus },
+  }));
+}
+
+const { slug } = Astro.params;
+const { syllabus } = Astro.props;
+const { Content } = await syllabus.render();
+
+const subject = subjects.find((subject) => subject.slug === slug);
+---
+
+<Layout title={syllabus.title}>
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">{subject!.title}</Fragment>
+      <Fragment slot="desc"></Fragment>
+    </Sectionhead>
+    <div class="mt-16">
+      <main class="container mx-auto max-w-4xl prose">
+        <Content />
+      </main>
+    </div>
+  </Container>
+</Layout>

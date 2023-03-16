@@ -35,13 +35,6 @@ let electiveSubjects = currentSemesterSubjects.filter(
       <Fragment slot="desc">{semester.description}</Fragment>
     </Sectionhead>
     <main class="container mx-auto mt-16">
-      {
-        compulsorySubjects.length > 0 && (
-          <h1 class="text-xl font-bold text-gray-800 lg:m-0 m-4 sm:p-6">
-            Compulsory Subjects
-          </h1>
-        )
-      }
       <div class="grid grid-cols-1 lg:grid-cols-2">
         {
           compulsorySubjects.map((subject, index) => (
@@ -49,8 +42,8 @@ let electiveSubjects = currentSemesterSubjects.filter(
               class="relative flex items-start border-l-4 border-green-600 justify-between align-between rounded-xl p-4 m-4 shadow-lg hover:shadow-xl sm:p-6 lg:p-8"
               href={`/subjects/${subject.slug}`}>
               <div class="flex py-4 text-gray-500 gap-5">
-                <h1 class="text-xl font-bold text-gray-600">{index + 1}.</h1>
-                <h3 class="text-lg font-bold text-gray-600 sm:text-xl">
+                <h1 class="text-xl font-bold text-gray-900">{index + 1}.</h1>
+                <h3 class="text-lg font-bold text-gray-900 sm:text-xl">
                   {subject.title}
                 </h3>
               </div>
@@ -60,7 +53,7 @@ let electiveSubjects = currentSemesterSubjects.filter(
       </div>
       {
         electiveSubjects.length > 0 && (
-          <h1 class="text-xl font-bold text-gray-800 lg:m-0 m-4 sm:p-6">
+          <h1 class="text-xl font-bold text-gray-500 lg:m-0 m-4 sm:p-6">
             Elective Subjects
           </h1>
         )
