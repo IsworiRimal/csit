@@ -36,6 +36,16 @@ let currentSemesterSubjects = subjects.filter(
             <h3 class="text-lg font-bold text-gray-600 sm:text-xl">Syllabus</h3>
           </div>
         </a>
+        <a
+          class="relative flex items-start border-l-4 border-green-600 justify-between align-between rounded-xl p-4 m-4 shadow-lg hover:shadow-xl sm:p-6 lg:p-8"
+          href={`/questions/${subject.slug}`}>
+          <div class="flex py-4 text-gray-500 gap-5">
+            <h1 class="text-xl font-bold text-gray-600">{2}.</h1>
+            <h3 class="text-lg font-bold text-gray-600 sm:text-xl">
+              Old Questions
+            </h3>
+          </div>
+        </a>
       </main>
       <div
         class="relative border-t-4 border-blue-600 rounded-xl p-4 m-4 shadow-lg hover:shadow-xl sm:p-6 lg:p-8">

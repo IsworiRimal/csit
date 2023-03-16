@@ -12,7 +12,7 @@ const blogCollection = defineCollection({
       alt: z.string(),
     }),
     publishDate: z.string().transform(str => new Date(str)),
-    author: z.string().default('Astroship'),
+    author: z.string().default('BscCsitNepal'),
     category: z.string(),
     tags: z.array(z.string()),
   }),
@@ -28,9 +28,20 @@ const syllabusCollection = defineCollection({
   }),
 });
 
+const questionCollection = defineCollection({
+  schema: z.object({
+    draft: z.boolean(),
+    year: z.string(),
+    subject: z.string(),
+    subject_slug: z.string(),
+    tags: z.array(z.string()).optional(),
+  }),
+});
+
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
 export const collections = {
   'blog': blogCollection,
   'syllabus': syllabusCollection,
+  'questions': questionCollection,
 };

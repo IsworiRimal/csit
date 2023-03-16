@@ -1,0 +1,41 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import semesters from "../../../data/semesters.json";
+import subjects from "../../../data/subjects.json";
+
+// Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const questionEntries = await getCollection("questions");
+
+  const questionEntriesWithSubjects = questionEntries.map((question) => {
+    const subject = subjects.find(
+      (subject) => subject.slug === question.data.subject_slug
+    );
+    return { ...question, subject };
+  });
+
+  return questionEntriesWithSubjects.map((question) => ({
+    params: { slug: question.subject!.slug, year: question.data.year },
+    props: { question },
+  }));
+}
+
+const { slug } = Astro.params;
+const { question } = Astro.props;
+const { Content } = await question.render();
+---
+
+<Layout title={question.data.year + " | Questions | " + question.subject.title}>
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">{question.data.year}</Fragment>
+      <Fragment slot="desc">{question.subject.title}</Fragment>
+    </Sectionhead>
+    <div class="mx-auto prose prose-lg mt-6">
+      <Content />
+    </div>
+  </Container>
+</Layout>
