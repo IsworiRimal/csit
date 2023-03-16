@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "First Semester",
+    "slug": "first-semester",
+    "description": "This is a first semester"
+  },
+  {
+    "id": 2,
+    "title": "Second Semester",
+    "slug": "second-semester",
+    "description": "This is a second semester"
+  },
+  {
+    "id": 3,
+    "title": "Third Semester",
+    "slug": "third-semester",
+    "description": "This is a third semester"
+  },
+  {
+    "id": 4,
+    "title": "Fourth Semester",
+    "slug": "fourth-semester",
+    "description": "This is a fourth semester"
+  },
+  {
+    "id": 5,
+    "title": "Fifth Semester",
+    "slug": "fifth-semester",
+    "description": "This is a fifth semester"
+  },
+  {
+    "id": 6,
+    "title": "Sixth Semester",
+    "slug": "sixth-semester",
+    "description": "This is a sixth semester"
+  },
+  {
+    "id": 7,
+    "title": "Seventh Semester",
+    "slug": "seventh-semester",
+    "description": "This is a seventh semester"
+  },
+  {
+    "id": 8,
+    "title": "Eighth Semester",
+    "slug": "eighth-semester",
+    "description": "This is a eighth semester"
+  }
+]

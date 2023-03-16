@@ -12,22 +12,29 @@ const blogCollection = defineCollection({
       alt: z.string(),
     }),
     publishDate: z.string().transform(str => new Date(str)),
-    author: z.string().default('Astroship'),
+    author: z.string().default('BscCsitNepal'),
     category: z.string(),
     tags: z.array(z.string()),
   }),
 });
 
-const teamCollection = defineCollection({
+const syllabusCollection = defineCollection({
   schema: z.object({
     draft: z.boolean(),
-    name: z.string(),
-    title: z.string(),
-    avatar: z.object({
-      src: z.string(),
-      alt: z.string(),
-    }),
-    publishDate: z.string().transform(str => new Date(str)),
+    author: z.string().optional(),
+    description: z.string(),
+    objectives: z.string(),
+    tags: z.array(z.string()),
+  }),
+});
+
+const questionCollection = defineCollection({
+  schema: z.object({
+    draft: z.boolean(),
+    year: z.string(),
+    subject: z.string(),
+    subject_slug: z.string(),
+    tags: z.array(z.string()).optional(),
   }),
 });
 
@@ -35,5 +42,6 @@ const teamCollection = defineCollection({
 //    This key should match your collection directory name in "src/content"
 export const collections = {
   'blog': blogCollection,
-  'team': teamCollection,
+  'syllabus': syllabusCollection,
+  'questions': questionCollection,
 };

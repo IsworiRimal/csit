@@ -1,0 +1,33 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import semesters from "../../data/semesters.json";
+---
+
+<Layout title="Semesters">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Semesters</Fragment>
+      <Fragment slot="desc">All semesters of csit are listed below.</Fragment>
+    </Sectionhead>
+    <main class="conatiner mx-auto mt-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        {
+          semesters.map((semester, index) => (
+            <a
+              class="relative flex items-start border-l-4 border-purple-600 justify-between rounded-xl p-4 m-4 shadow-lg hover:shadow-xl sm:p-6 lg:p-8"
+              href={`/semesters/${semester.slug}`}>
+              <div class="flex py-4 text-gray-500 gap-5">
+                <h1 class="text-xl font-bold text-gray-900">{index + 1} .</h1>
+                <h3 class="text-lg font-bold text-gray-900 sm:text-xl">
+                  {semester.title}
+                </h3>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </main>
+  </Container>
+</Layout>

@@ -1,0 +1,85 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+import semesters from "../../data/semesters.json";
+import subjects from "../../data/subjects.json";
+
+// Generate a new path for every collection entry
+export async function getStaticPaths() {
+  return semesters.map((semester) => ({
+    params: { slug: semester.slug },
+    props: { semester },
+  }));
+}
+
+const { slug } = Astro.params;
+const { semester } = Astro.props;
+
+let currentSemesterSubjects = subjects.filter(
+  (subject) => subject.semester_id === semester.id
+);
+
+let compulsorySubjects = currentSemesterSubjects.filter(
+  (subject) => subject.elective === false
+);
+let electiveSubjects = currentSemesterSubjects.filter(
+  (subject) => subject.elective === true
+);
+---
+
+<Layout title={semester.title}>
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">{semester.title}</Fragment>
+      <Fragment slot="desc">{semester.description}</Fragment>
+    </Sectionhead>
+    <main class="container mx-auto mt-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        {
+          compulsorySubjects.map((subject, index) => (
+            <a
+              class="relative flex items-start border-l-4 border-green-600 justify-between align-between rounded-xl p-4 m-4 shadow-lg hover:shadow-xl sm:p-6 lg:p-8"
+              href={`/subjects/${subject.slug}`}>
+              <div class="flex py-4 text-gray-500 gap-5">
+                <h1 class="text-xl font-bold text-gray-900">{index + 1}.</h1>
+                <h3 class="text-lg font-bold text-gray-900 sm:text-xl">
+                  {subject.title}
+                </h3>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+      {
+        electiveSubjects.length > 0 && (
+          <h1 class="text-xl font-bold text-gray-500 lg:m-0 m-4 sm:p-6">
+            Elective Subjects
+          </h1>
+        )
+      }
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        {
+          electiveSubjects.length > 0 && (
+            <>
+              {electiveSubjects.map((subject, index) => (
+                <a
+                  class="relative flex items-start border-l-4 border-pink-600 justify-between align-between rounded-xl p-4 m-4 shadow-lg hover:shadow-xl sm:p-6 lg:p-8"
+                  href={`/subjects/${subject.slug}`}>
+                  <div class="flex py-4 text-gray-500 gap-5">
+                    <h1 class="text-xl font-bold text-gray-900">
+                      {index + 1}.
+                    </h1>
+                    <h3 class="text-lg font-bold text-gray-900 sm:text-xl">
+                      {subject.title}
+                    </h3>
+                  </div>
+                </a>
+              ))}
+            </>
+          )
+        }
+      </div>
+    </main>
+  </Container>
+</Layout>

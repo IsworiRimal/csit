@@ -1,0 +1,70 @@
+---
+const { data } = Astro.props;
+
+import semesters from "../../data/semesters.json";
+
+// User friendly names for keys
+const keys = {
+  id: "ID",
+  title: "Title",
+  slug: "Slug",
+  short_name: "Short Name",
+  course_code: "Course Code",
+  nature_of_course: "Nature of Course",
+  full_marks: "Full Marks",
+  pass_marks: "Pass Marks",
+  credit_hrs: "Credit Hrs",
+  elective: "Compulsory / Elective",
+  semester_id: "Semester",
+};
+
+// Keys only to be rendered
+const whiteListedKeys = [
+  "short_name",
+  "course_code",
+  "nature_of_course",
+  "full_marks",
+  "pass_marks",
+  "credit_hrs",
+  "elective",
+  "semester_id",
+];
+
+const getSemesterTitle = (id: number) => {
+  const semester = semesters.find((semester) => semester.id === id);
+  return semester!.title;
+};
+
+// Filtering out the only whitelisted keys and removing keys with empty values
+const filteredData = Object.keys(data)
+  .filter((key) => whiteListedKeys.includes(key) && data[key] != "")
+  .reduce((obj, key) => {
+    obj[key] = data[key];
+    return obj;
+  }, {});
+
+// Converting boolean true or false to Elective or Compulsory
+filteredData["elective"]
+  ? (filteredData["elective"] = "Elective")
+  : (filteredData["elective"] = "Compulsory");
+
+// Converting semester id to semester name
+filteredData["semester_id"] = getSemesterTitle(filteredData["semester_id"]);
+---
+
+<>
+  {
+    Object.entries(filteredData).map(([key, value], index) => (
+      <div
+        class={
+          "bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6" +
+          (index % 2 ? " bg-gray-100" : " bg-white")
+        }>
+        <dt class="text-sm font-medium text-gray-500">{keys[key]}</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0 font-bold">
+          {value}
+        </dd>
+      </div>
+    ))
+  }
+</>
