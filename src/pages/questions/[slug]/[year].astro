@@ -2,6 +2,7 @@
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import Layout from "@layouts/Layout.astro";
+import { ucFirst } from "@utils/all";
 import { getCollection } from "astro:content";
 import semesters from "../../../data/semesters.json";
 import subjects from "../../../data/subjects.json";
@@ -28,10 +29,13 @@ const { question } = Astro.props;
 const { Content } = await question.render();
 ---
 
-<Layout title={question.data.year + " | Questions | " + question.subject.title}>
+<Layout
+  title={ucFirst(question.data.year) +
+    " | Questions | " +
+    question.subject.title}>
   <Container>
     <Sectionhead>
-      <Fragment slot="title">{question.data.year}</Fragment>
+      <Fragment slot="title">{ucFirst(question.data.year)}</Fragment>
       <Fragment slot="desc">{question.subject.title}</Fragment>
     </Sectionhead>
     <div class="mx-auto prose prose-lg mt-6">

@@ -4,6 +4,7 @@ import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import subjects from "../../../data/subjects.json";
 import { getCollection } from "astro:content";
+import { ucFirst } from "@utils/all";
 
 // Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -27,6 +28,7 @@ const questionEntries = await getCollection("questions");
 const questionOfThisSubject = questionEntries.filter(
   (q) => q.data.subject_slug === question.data.subject_slug
 );
+questionOfThisSubject.reverse();
 ---
 
 <Layout title="Questions">
@@ -36,29 +38,16 @@ const questionOfThisSubject = questionEntries.filter(
       <Fragment slot="desc">Old Questions</Fragment>
     </Sectionhead>
     <main class="conatiner mx-auto mt-16">
-      <ul class="flex flex-col gap-5 pl-5 mt-2 space-y-1 list-disc list-inside">
-        {
-          questionOfThisSubject.map((year, index) => (
-            <li>
-              <a
-                href={`/questions/${year.slug}`}
-                class="text-purple-800 font-bold hover:text-purple-500">
-                Question Paper {year.data.year}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
       <div class="grid grid-cols-1 lg:grid-cols-2">
         {
           questionOfThisSubject.map((year, index) => (
             <a
-              class="relative flex items-start border-l-4 border-purple-600 justify-between rounded-xl p-4 m-4 shadow-lg hover:shadow-xl sm:p-6 lg:p-8"
+              class="relative flex items-start border-l-4 border-violet-400 justify-between rounded-xl p-4 m-4 shadow-lg hover:shadow-xl sm:p-6 lg:p-8"
               href={`/questions/${year.slug}`}>
               <div class="flex py-4 text-gray-500 gap-5">
                 <h1 class="text-xl font-bold text-gray-900">{index + 1} .</h1>
                 <h3 class="text-lg font-bold text-gray-900 sm:text-xl">
-                  Question Paper {year.data.year}
+                  Question Paper {ucFirst(year.data.year)}
                 </h3>
               </div>
             </a>
