@@ -1,6 +1,5 @@
 [
     {
-        "id": 1,
         "title": "Introduction to Information Technology",
         "slug": "introduction-to-information-technology",
         "short_name": "IIT",
@@ -13,7 +12,6 @@
         "semester_id": 1
     },
     {
-        "id": 2,
         "title": "C Programming",
         "slug": "c-programming",
         "short_name": "C",
@@ -26,7 +24,6 @@
         "semester_id": 1
     },
     {
-        "id": 3,
         "title": "Digital Logic",
         "slug": "digital-logic",
         "short_name": "DL",
@@ -39,7 +36,6 @@
         "semester_id": 1
     },
     {
-        "id": 4,
         "title": "Mathematics I",
         "slug": "mathematics-i",
         "short_name": "",
@@ -52,7 +48,6 @@
         "semester_id": 1
     },
     {
-        "id": 5,
         "title": "Physics",
         "slug": "physics",
         "short_name": "",
@@ -65,7 +60,6 @@
         "semester_id": 1
     },
     {
-        "id": 6,
         "title": "Discrete Structures",
         "slug": "discrete-structures",
         "short_name": "DS",
@@ -78,7 +72,6 @@
         "semester_id": 2
     },
     {
-        "id": 7,
         "title": "Object Oriented Programming",
         "slug": "object-oriented-programming",
         "short_name": "OOP",
@@ -91,7 +84,6 @@
         "semester_id": 2
     },
     {
-        "id": 8,
         "title": "Microprocessor",
         "slug": "microprocessor",
         "short_name": "",
@@ -104,7 +96,6 @@
         "semester_id": 2
     },
     {
-        "id": 9,
         "title": "Mathematics II",
         "slug": "mathematics-ii",
         "short_name": "",
@@ -117,7 +108,6 @@
         "semester_id": 2
     },
     {
-        "id": 10,
         "title": "Statistics I",
         "slug": "statistics-i",
         "short_name": "",
@@ -130,7 +120,6 @@
         "semester_id": 2
     },
     {
-        "id": 11,
         "title": "Data Structures and Algorithms",
         "slug": "data-structures-and-algorithms",
         "short_name": "DSA",
@@ -143,7 +132,6 @@
         "semester_id": 3
     },
     {
-        "id": 12,
         "title": "Numerical Methods",
         "slug": "numerical-methods",
         "short_name": "NM",
@@ -156,7 +144,6 @@
         "semester_id": 3
     },
     {
-        "id": 13,
         "title": "Computer Architecture",
         "slug": "computer-architecture",
         "short_name": "CA",
@@ -169,7 +156,6 @@
         "semester_id": 3
     },
     {
-        "id": 14,
         "title": "Computer Graphics",
         "slug": "computer-graphics",
         "short_name": "CG",
@@ -182,7 +168,6 @@
         "semester_id": 3
     },
     {
-        "id": 15,
         "title": "Statistics II",
         "slug": "statistics-ii",
         "short_name": "",
@@ -195,7 +180,6 @@
         "semester_id": 3
     },
     {
-        "id": 16,
         "title": "Theory of Computation",
         "slug": "theory-of-computation",
         "short_name": "TOC",
@@ -208,7 +192,6 @@
         "semester_id": 4
     },
     {
-        "id": 17,
         "title": "Computer Networks",
         "slug": "computer-networks",
         "short_name": "CN",
@@ -221,7 +204,6 @@
         "semester_id": 4
     },
     {
-        "id": 18,
         "title": "Operating Systems",
         "slug": "operating-systems",
         "short_name": "OS",
@@ -234,7 +216,6 @@
         "semester_id": 4
     },
     {
-        "id": 19,
         "title": "Database Management Systems",
         "slug": "database-management-systems",
         "short_name": "DBMS",
@@ -247,7 +228,6 @@
         "semester_id": 4
     },
     {
-        "id": 20,
         "title": "Artificial Intelligence",
         "slug": "artificial-intelligence",
         "short_name": "AI",
@@ -260,7 +240,6 @@
         "semester_id": 4
     },
     {
-        "id": 21,
         "title": "Design and Analysis of Algorithms",
         "slug": "design-and-analysis-of-algorithms",
         "short_name": "DAA",
@@ -273,7 +252,6 @@
         "semester_id": 5
     },
     {
-        "id": 22,
         "title": "System Analysis and Design",
         "slug": "system-analysis-and-design",
         "short_name": "SAD",
@@ -286,7 +264,6 @@
         "semester_id": 5
     },
     {
-        "id": 23,
         "title": "Cryptography",
         "slug": "cryptography",
         "short_name": "Crypto",
@@ -299,7 +276,6 @@
         "semester_id": 5
     },
     {
-        "id": 24,
         "title": "Simulation and Modeling",
         "slug": "simulation-and-modeling",
         "short_name": "Simulation",
@@ -312,7 +288,6 @@
         "semester_id": 5
     },
     {
-        "id": 25,
         "title": "Web Technology",
         "slug": "web-technology",
         "short_name": "Web",
@@ -325,7 +300,6 @@
         "semester_id": 5
     },
     {
-        "id": 26,
         "title": "Multimedia Computing",
         "slug": "multimedia-computing",
         "short_name": "Multimedia",
@@ -338,7 +312,18 @@
         "semester_id": 5
     },
     {
-        "id": 28,
+        "title": "Wireless Networking",
+        "slug": "wireless-networking",
+        "short_name": "",
+        "course_code": "CSC320",
+        "nature_of_course": "Theory + Lab",
+        "full_marks": "60 + 20 + 20",
+        "pass_marks": "24 + 8 + 8",
+        "credit_hrs": "3",
+        "elective": true,
+        "semester_id": 5
+    },
+    {
         "title": "Image Processing",
         "slug": "image-processing",
         "short_name": "IP",
@@ -351,7 +336,6 @@
         "semester_id": 5
     },
     {
-        "id": 29,
         "title": "Knowledge Management",
         "slug": "knowledge-management",
         "short_name": "",
@@ -364,7 +348,6 @@
         "semester_id": 5
     },
     {
-        "id": 30,
         "title": "Society and Ethics in Information Technology",
         "slug": "society-and-ethics-in-information-technology",
         "short_name": "",
@@ -377,7 +360,6 @@
         "semester_id": 5
     },
     {
-        "id": 31,
         "title": "Microprocessor Based Design",
         "slug": "microprocessor-based-design",
         "short_name": "",
@@ -390,7 +372,6 @@
         "semester_id": 5
     },
     {
-        "id": 32,
         "title": "Software Engineering",
         "slug": "software-engineering",
         "short_name": "",
@@ -403,7 +384,6 @@
         "semester_id": 6
     },
     {
-        "id": 33,
         "title": "Compiler Design and Construction",
         "slug": "compiler-design-and-construction",
         "short_name": "Compiler",
@@ -416,7 +396,6 @@
         "semester_id": 6
     },
     {
-        "id": 34,
         "title": "E-Governance",
         "slug": "e-governance",
         "short_name": "EG",
@@ -429,7 +408,6 @@
         "semester_id": 6
     },
     {
-        "id": 35,
         "title": "NET Centric Computing",
         "slug": "net-centric-computing",
         "short_name": "NCC",
@@ -442,7 +420,6 @@
         "semester_id": 6
     },
     {
-        "id": 36,
         "title": "Technical Writing",
         "slug": "technical-writing",
         "short_name": "TW",
@@ -455,7 +432,6 @@
         "semester_id": 6
     },
     {
-        "id": 37,
         "title": "Applied Logic",
         "slug": "applied-logic",
         "short_name": "",
@@ -468,7 +444,6 @@
         "semester_id": 6
     },
     {
-        "id": 38,
         "title": "E-Commerce",
         "slug": "e-commerce",
         "short_name": "",
@@ -481,7 +456,6 @@
         "semester_id": 6
     },
     {
-        "id": 39,
         "title": "Automation and Robotics",
         "slug": "automation-and-robotics",
         "short_name": "",
@@ -494,7 +468,6 @@
         "semester_id": 6
     },
     {
-        "id": 40,
         "title": "Neural Networks",
         "slug": "neural-networks",
         "short_name": "",
@@ -507,7 +480,6 @@
         "semester_id": 6
     },
     {
-        "id": 41,
         "title": "Computer Hardware Design",
         "slug": "computer-hardware-design",
         "short_name": "",
@@ -520,7 +492,6 @@
         "semester_id": 6
     },
     {
-        "id": 42,
         "title": "Cognitive Science",
         "slug": "cognitive-science",
         "short_name": "",
@@ -533,7 +504,6 @@
         "semester_id": 6
     },
     {
-        "id": 43,
         "title": "Advanced Java Programming",
         "slug": "advanced-java-programming",
         "short_name": "AJP",
@@ -546,7 +516,6 @@
         "semester_id": 7
     },
     {
-        "id": 44,
         "title": "Data Warehousing and Data Mining",
         "slug": "data-warehousing-and-data-mining",
         "short_name": "DWDM",
@@ -559,7 +528,6 @@
         "semester_id": 7
     },
     {
-        "id": 45,
         "title": "Principles of Management",
         "slug": "principles-of-management",
         "short_name": "POM",
@@ -572,7 +540,6 @@
         "semester_id": 7
     },
     {
-        "id": 46,
         "title": "Project Work",
         "slug": "project-work",
         "short_name": "Project",
@@ -585,7 +552,6 @@
         "semester_id": 7
     },
     {
-        "id": 47,
         "title": "Information Retrieval",
         "slug": "information-retrieval",
         "short_name": "IR",
@@ -598,7 +564,6 @@
         "semester_id": 7
     },
     {
-        "id": 48,
         "title": "Database Administration",
         "slug": "database-administration",
         "short_name": "DBA",
@@ -611,7 +576,6 @@
         "semester_id": 7
     },
     {
-        "id": 49,
         "title": "Software Project Management",
         "slug": "software-project-management",
         "short_name": "SPM",
@@ -624,7 +588,6 @@
         "semester_id": 7
     },
     {
-        "id": 50,
         "title": "Network Security",
         "slug": "network-security",
         "short_name": "Network",
@@ -637,7 +600,6 @@
         "semester_id": 7
     },
     {
-        "id": 51,
         "title": "Digital System Design",
         "slug": "digital-system-design",
         "short_name": "DSD",
@@ -650,7 +612,6 @@
         "semester_id": 7
     },
     {
-        "id": 52,
         "title": "Network and System Administration",
         "slug": "network-and-system-administration",
         "short_name": "NSA",
@@ -663,7 +624,6 @@
         "semester_id": 7
     },
     {
-        "id": 53,
         "title": "International Marketing",
         "slug": "international-marketing",
         "short_name": "IM",
@@ -676,7 +636,6 @@
         "semester_id": 7
     },
     {
-        "id": 54,
         "title": "Advanced Database",
         "slug": "advanced-database",
         "short_name": "AD",
@@ -689,7 +648,6 @@
         "semester_id": 8
     },
     {
-        "id": 55,
         "title": "Internship",
         "slug": "internship",
         "short_name": "Intern",
@@ -702,7 +660,6 @@
         "semester_id": 8
     },
     {
-        "id": 56,
         "title": "Advanced Networking with IPv6",
         "slug": "advanced-networking-with-ipv6",
         "short_name": "",
@@ -715,7 +672,6 @@
         "semester_id": 8
     },
     {
-        "id": 57,
         "title": "Distributed Networking",
         "slug": "distributed-networking",
         "short_name": "DN",
@@ -728,7 +684,6 @@
         "semester_id": 8
     },
     {
-        "id": 58,
         "title": "Game Technology",
         "slug": "game-technology",
         "short_name": "GT",
@@ -741,7 +696,6 @@
         "semester_id": 8
     },
     {
-        "id": 59,
         "title": "Distributed and Object Oriented Database",
         "slug": "distributed-and-object-oriented-database",
         "short_name": "DOOD",
@@ -754,7 +708,6 @@
         "semester_id": 8
     },
     {
-        "id": 60,
         "title": "Introduction to Cloud Computing",
         "slug": "introduction-to-cloud-computing",
         "short_name": "ICC",
@@ -767,7 +720,6 @@
         "semester_id": 8
     },
     {
-        "id": 61,
         "title": "Geographical Information System",
         "slug": "geographical-information-system",
         "short_name": "GIS",
@@ -780,7 +732,6 @@
         "semester_id": 8
     },
     {
-        "id": 62,
         "title": "Decision Support Systems and Expert System",
         "slug": "decision-support-systems-and-expert-system",
         "short_name": "DSS",
@@ -793,7 +744,6 @@
         "semester_id": 8
     },
     {
-        "id": 63,
         "title": "Mobile Application Development",
         "slug": "mobile-application-development",
         "short_name": "MAD",
@@ -806,7 +756,6 @@
         "semester_id": 8
     },
     {
-        "id": 64,
         "title": "Embedded Systems Programming",
         "slug": "embedded-systems-programming",
         "short_name": "ESP",
@@ -819,7 +768,6 @@
         "semester_id": 8
     },
     {
-        "id": 65,
         "title": "International Business Management",
         "slug": "international-business-management",
         "short_name": "IBM",
