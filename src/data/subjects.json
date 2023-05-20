@@ -586,8 +586,8 @@
     },
     {
         "id": 47,
-        "title": "Information Retieval",
-        "slug": "information-retieval",
+        "title": "Information Retrieval",
+        "slug": "information-retrieval",
         "short_name": "IR",
         "course_code": "CSC413",
         "nature_of_course": "Theory + Lab",
