@@ -612,18 +612,6 @@
         "semester_id": 7
     },
     {
-        "title": "Network and System Administration",
-        "slug": "network-and-system-administration",
-        "short_name": "NSA",
-        "course_code": "CSC472",
-        "nature_of_course": "Theory + Lab",
-        "full_marks": "60 + 20 + 20",
-        "pass_marks": "24 + 8 + 8",
-        "credit_hrs": "3",
-        "elective": true,
-        "semester_id": 7
-    },
-    {
         "title": "International Marketing",
         "slug": "international-marketing",
         "short_name": "IM",
@@ -748,6 +736,30 @@
         "slug": "mobile-application-development",
         "short_name": "MAD",
         "course_code": "CSC470",
+        "nature_of_course": "Theory + Lab",
+        "full_marks": "60 + 20 + 20",
+        "pass_marks": "24 + 8 + 8",
+        "credit_hrs": "3",
+        "elective": true,
+        "semester_id": 8
+    },
+    {
+        "title": "Real Time Systems",
+        "slug": "real-time-systems",
+        "short_name": "RTS",
+        "course_code": "CSC471",
+        "nature_of_course": "Theory + Lab",
+        "full_marks": "60 + 20 + 20",
+        "pass_marks": "24 + 8 + 8",
+        "credit_hrs": "3",
+        "elective": true,
+        "semester_id": 8
+    },
+    {
+        "title": "Network and System Administration",
+        "slug": "network-and-system-administration",
+        "short_name": "NSA",
+        "course_code": "CSC472",
         "nature_of_course": "Theory + Lab",
         "full_marks": "60 + 20 + 20",
         "pass_marks": "24 + 8 + 8",
