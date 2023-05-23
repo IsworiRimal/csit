@@ -5,6 +5,8 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import subjects from "../../data/subjects.json";
 
+const gitBranch: string = process.env.NODE_ENV === "production" ? "master" : "dev";
+
 // Generate a new path for every collection entry
 export async function getStaticPaths() {
   const syllabusEntries = await getCollection("syllabus", ({ data }) => {
@@ -35,7 +37,7 @@ const subject = subjects.find((subject) => subject.slug === slug);
         <hr />
         <p>Find any bugs or want to contribute? Help us improve this page.</p>
         <a
-          href={`https://github.com/bsccsitnepal/bsccsitnepal/edit/master/src/content/syllabus/${slug}.md`}
+          href={`https://github.com/bsccsitnepal/bsccsitnepal/edit/${gitBranch}/src/content/syllabus/${slug}.md`}
           target="_blank"
           rel="noopener noreferrer">
           <i class="fa-light fa-pen-to-square"></i>
