@@ -6,7 +6,7 @@ import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 
 // Filter blog entries with 'draft: false' & date before current date
-const publishedBlogEntries = await getCollection("blog", ({ data }) => {
+const publishedBlogEntries = await getCollection("blogs", ({ data }) => {
   return !data.draft && data.publishDate < new Date();
 });
 
@@ -29,7 +29,7 @@ publishedBlogEntries.sort(function (a, b) {
         {
           publishedBlogEntries.map((blogPostEntry, index) => (
             <li>
-              <a href={`/blog/${blogPostEntry.slug}`}>
+              <a href={`/blogs/${blogPostEntry.slug}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
                   <Picture
                     src={blogPostEntry.data.image.src}
@@ -54,9 +54,7 @@ publishedBlogEntries.sort(function (a, b) {
                     </h2>
 
                     <div class="flex gap-2 mt-3">
-                      <span class="text-gray-400">
-                        {blogPostEntry.data.author}
-                      </span>
+                      <span class="text-gray-400">{blogPostEntry.data.author}</span>
                       <span class="text-gray-400">• </span>
                       <time
                         class="text-gray-400"
