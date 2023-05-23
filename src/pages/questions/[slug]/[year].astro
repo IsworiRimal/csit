@@ -7,14 +7,14 @@ import { getCollection } from "astro:content";
 import semesters from "../../../data/semesters.json";
 import subjects from "../../../data/subjects.json";
 
+const gitBranch: string = process.env.NODE_ENV === "production" ? "master" : "dev";
+
 // Generate a new path for every collection entry
 export async function getStaticPaths() {
   const questionEntries = await getCollection("questions");
 
   const questionEntriesWithSubjects = questionEntries.map((question) => {
-    const subject = subjects.find(
-      (subject) => subject.slug === question.data.subject_slug
-    );
+    const subject = subjects.find((subject) => subject.slug === question.data.subject_slug);
     return { ...question, subject };
   });
 
@@ -29,10 +29,7 @@ const { question } = Astro.props;
 const { Content } = await question.render();
 ---
 
-<Layout
-  title={ucFirst(question.data.year) +
-    " | Questions | " +
-    question.subject.title}>
+<Layout title={ucFirst(question.data.year) + " | Questions | " + question.subject.title}>
   <Container>
     <Sectionhead>
       <Fragment slot="title">{ucFirst(question.data.year)}</Fragment>
@@ -40,6 +37,15 @@ const { Content } = await question.render();
     </Sectionhead>
     <div class="mx-auto prose prose-lg mt-6">
       <Content />
+      <hr />
+      <p>Find any bugs or want to contribute? Help us improve this page.</p>
+      <a
+        href={`https://github.com/bsccsitnepal/bsccsitnepal/edit/${gitBranch}/src/content/questions/${slug}/${question.data.year}.md`}
+        target="_blank"
+        rel="noopener noreferrer">
+        <i class="fa-light fa-pen-to-square"></i>
+        <span class="pl-1">Edit this page in GitHub</span>
+      </a>
     </div>
   </Container>
 </Layout>

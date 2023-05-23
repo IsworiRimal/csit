@@ -1,0 +1,123 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import semesters from "../data/semesters.json";
+import subjects from "../data/subjects.json";
+import { groupBy } from "@utils/all";
+
+let grouped = groupBy(subjects, "semester_id");
+
+let total = semesters.map((semester, index) => {
+  let totalCreditHrs = 0;
+  let totalMarks = 0;
+
+  grouped[semester.id].forEach((subject: any) => {
+    if (!subject.elective) {
+      totalCreditHrs += eval(subject.credit_hrs);
+      totalMarks += eval(subject.full_marks);
+    }
+  });
+
+  semester.electives.forEach((subject: any) => {
+    totalCreditHrs += 3;
+    totalMarks += 100;
+  });
+
+  return {
+    totalCreditHrs,
+    totalMarks,
+  };
+});
+---
+
+<Layout title="Curricular Structure">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Curricular Structure</Fragment>
+      <Fragment slot="desc"></Fragment>
+    </Sectionhead>
+    <div class="mt-5 lg:mt-16">
+      <main class="container mx-auto max-w-4xl prose">
+        <h2>Table of Contents</h2>
+        <ul>
+          {
+            semesters.map((semester) => (
+              <li>
+                <a href={"#" + semester.slug}>{semester.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+        <hr />
+        <p>B.Sc. CSIT program comprises of the following courses:</p>
+        {
+          semesters.map((semester, index) => (
+            <>
+              <Fragment>
+                <h3 class="pb-3" id={semester.slug}>
+                  <a href={"/semesters/" + semester.slug}>{semester.title}</a>
+                </h3>
+                <table class="table-auto">
+                  <thead>
+                    <tr>
+                      <th>Course Code</th>
+                      <th>Course Title</th>
+                      <th>Credit Hours</th>
+                      <th>Marks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {grouped[semester.id].map(
+                      (subject: any) =>
+                        !subject.elective && (
+                          <tr>
+                            <td>{subject.course_code}</td>
+                            <td>
+                              <a href={"/subjects/" + subject.slug}>{subject.title}</a>
+                            </td>
+                            <td>{subject.credit_hrs}</td>
+                            <td>{eval(subject.full_marks)}</td>
+                          </tr>
+                        )
+                    )}
+                    {semester.electives.map((subject: any) => (
+                      <tr>
+                        <td />
+                        <td>{subject}</td>
+                        <td>3</td>
+                        <td>100</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th>Total</th>
+                      <th />
+                      <th>{total[index].totalCreditHrs}</th>
+                      <th>{total[index].totalMarks}</th>
+                    </tr>
+                  </tfoot>
+                </table>
+                {semester.electives.length > 0 && <strong>List of electives:</strong>}
+                <ol class="list-decimal">
+                  {grouped[semester.id].map(
+                    (subject: any) =>
+                      subject.elective && (
+                        <li>
+                          <a href={"/subjects/" + subject.slug}>
+                            {subject.title + " (" + subject.course_code + ")"}
+                          </a>
+                        </li>
+                      )
+                  )}
+                </ol>
+              </Fragment>
+              <br />
+            </>
+          ))
+        }
+      </main>
+    </div>
+  </Container>
+</Layout>
