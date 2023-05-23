@@ -894,6 +894,11 @@ astro-navbar@^1.1.5:
   resolved "https://registry.yarnpkg.com/astro-navbar/-/astro-navbar-1.1.5.tgz#9f299c883fac3a650d86be2f01fb40a8b758c590"
   integrity sha512-sP1t16j+yTVoX0QYuzqt1jLSFe9suH71Z8p96ExsorZtVQ7G/xOT4SCBTw296Vu7OgQY/Cese8iwT7xHQ37p8g==
 
+astro-netlify-components@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/astro-netlify-components/-/astro-netlify-components-0.2.1.tgz#40ea0ece322bc1eb961860af434228cacca3fb55"
+  integrity sha512-TxweXSx6rFk+bKCIkql5xHeOxthUt5uF2zxJ4dk9wsHFEwva48Ct/XOxgsrt76UT9v8fR7ank1AlGJsvxX8JfQ==
+
 astro-seo@^0.7.0:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/astro-seo/-/astro-seo-0.7.1.tgz#b1921ba94bc80319f091d3dbf93d9450f3fa5ffe"
@@ -1408,6 +1413,11 @@ domutils@^2.8.0:
     dom-serializer "^1.0.1"
     domelementtype "^2.2.0"
     domhandler "^4.2.0"
+
+dotenv@^16.0.3:
+  version "16.0.3"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.0.3.tgz#115aec42bac5053db3c456db30cc243a5a836a07"
+  integrity sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==
 
 dset@^3.1.2:
   version "3.1.2"
