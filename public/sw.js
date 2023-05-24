@@ -37,7 +37,6 @@ self.addEventListener('fetch', event => {
                 })
             });
         }).catch(() => {
-            console.log(event);
             return caches.match('/offline');
         })
     );
