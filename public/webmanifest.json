@@ -31,7 +31,7 @@
             "name": "Learning",
             "short_name": "Learn",
             "description": "Easy access to csit resources",
-            "url": "/semesters",
+            "url": "/semesters/",
             "icons": [
                 {
                     "src": "/assets/shortcuts/learn.png",
@@ -43,7 +43,7 @@
             "name": "Blogs",
             "short_name": "Blogs",
             "description": "View all latest blogs",
-            "url": "/blogs",
+            "url": "/blogs/",
             "icons": [
                 {
                     "src": "/assets/shortcuts/blogs.png",
