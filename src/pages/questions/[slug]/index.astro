@@ -10,9 +10,7 @@ import { ucFirst } from "@utils/all";
 export async function getStaticPaths() {
   const questionEntries = await getCollection("questions");
   const questionEntriesWithSubjects = questionEntries.map((question) => {
-    const subject = subjects.find(
-      (subject) => subject.slug === question.data.subject_slug
-    );
+    const subject = subjects.find((subject) => subject.slug === question.data.subject_slug);
     return { ...question, subject };
   });
 
@@ -43,7 +41,7 @@ questionOfThisSubject.reverse();
           questionOfThisSubject.map((year, index) => (
             <a
               class="relative flex items-start border-l-4 border-violet-400 justify-between rounded-xl p-4 m-4 shadow-lg hover:shadow-xl sm:p-6 lg:p-8"
-              href={`/questions/${year.slug}`}>
+              href={`/questions/${year.slug}/`}>
               <div class="flex py-4 text-gray-500 gap-5">
                 <h1 class="text-xl font-bold text-gray-900">{index + 1} .</h1>
                 <h3 class="text-lg font-bold text-gray-900 sm:text-xl">

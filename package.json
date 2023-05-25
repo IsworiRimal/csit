@@ -1,14 +1,14 @@
 {
-  "name": "better-belt",
+  "name": "bsccsitnepal",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && node ./src/generateAssetLinks.js",
+    "build": "astro build && yarn generate",
     "preview": "astro preview",
     "astro": "astro",
-    "generate": "node ./src/generateAssetLinks.js"
+    "generate": "node ./src/generateSW.js"
   },
   "dependencies": {
     "@astrojs/image": "^0.14.1",
@@ -27,7 +27,7 @@
     "dotenv": "^16.0.3",
     "sharp": "^0.31.3",
     "tailwindcss": "^3.2.4",
-    "vite-plugin-pwa": "^0.15.0"
+    "workbox-build": "^6.5.4"
   },
   "devDependencies": {}
 }

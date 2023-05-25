@@ -16,6 +16,6 @@ export default defineConfig({
     }),
     mdx(),
     sitemap(),
-    // compress(),
+    compress(),
   ],
 });
