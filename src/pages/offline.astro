@@ -1,0 +1,24 @@
+---
+import Container from "@components/container.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Offline">
+  <Container>
+    <div class="flex flex-col mt-16 justify-center align-center text-center" style="height:50vh">
+      <div class="flex flex-col items-center text-center">
+        <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">Oops</h1>
+        <p class="text-lg mt-4 text-slate-600">Looks like you are offline</p>
+        <small class="text-gray-500">Please connect to internet to view these resources.</small>
+        <div class="flex mt-5">
+          <a
+            href="/"
+            class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-white text-black border-2 border-black">
+            <i class="fa-light fa-house text-black w-5 h-5 mx-2"></i>
+            Return Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Layout>

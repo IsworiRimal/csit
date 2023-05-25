@@ -1,0 +1,55 @@
+{
+    "name": "Bsc Csit Nepal",
+    "short_name": "Bsc Csit Nepal",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#DF2D2D",
+    "lang": "en",
+    "scope": "/",
+    "description": "",
+    "icons": [
+        {
+            "src": "/favicons/favicon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicons/favicon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicons/favicon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Learning",
+            "short_name": "Learn",
+            "description": "Easy access to csit resources",
+            "url": "/semesters",
+            "icons": [
+                {
+                    "src": "/assets/shortcuts/learn.png",
+                    "sizes": "192x192"
+                }
+            ]
+        },
+        {
+            "name": "Blogs",
+            "short_name": "Blogs",
+            "description": "View all latest blogs",
+            "url": "/blogs",
+            "icons": [
+                {
+                    "src": "/assets/shortcuts/blogs.png",
+                    "sizes": "192x192"
+                }
+            ]
+        }
+    ]
+}
