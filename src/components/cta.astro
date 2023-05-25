@@ -9,6 +9,38 @@ import Link from "./ui/link.astro";
     You can install our app on your phone and use it offline.
   </p>
   <div class="flex mt-5">
-    <Link href="#" style="inverted">Install App</Link>
+    <button
+      class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-white text-black border-2 border-transparent"
+      id="installButton"
+      disabled>
+      Install App
+    </button>
   </div>
+  <script>
+    let deferredPrompt: any;
+
+    // Check if the PWA can be installed
+    window.addEventListener("beforeinstallprompt", (event) => {
+      event.preventDefault();
+      deferredPrompt = event;
+      document.querySelector("#installButton")?.removeAttribute("disabled");
+    });
+
+    // Handle button click event
+    document.querySelector("#installButton")?.addEventListener("click", () => {
+      if (deferredPrompt) {
+        // Show the installation prompt
+        deferredPrompt.prompt();
+
+        // Wait for the user to respond to the prompt
+        deferredPrompt.userChoice.then((choiceResult: any) => {
+          choiceResult.outcome === "accepted"
+            ? console.log("PWA installed")
+            : console.log("PWA installation canceled");
+          // Reset the deferred prompt
+          deferredPrompt = null;
+        });
+      }
+    });
+  </script>
 </div>
