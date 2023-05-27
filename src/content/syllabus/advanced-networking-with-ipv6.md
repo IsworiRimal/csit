@@ -105,7 +105,7 @@ For the lab work, one PC to one student either in virtual environment or real en
 provided. Students will be divided into group of 3 students. The working environment and machine
 connectivity will look like the following:
 
-![diagram.png](https://cdn.bsccsitnepal.com/images/2023/05/21/diagram.png)
+![diagram.png](/media/owhzvfgxdw.png)
 
 **Tools Needed:** TCPDUMP & WIRESHARK, VMWare Environment, Linux/FreeBSD, Windows
 
