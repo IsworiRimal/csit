@@ -1,8 +1,6 @@
 ---
 draft: false
 year: "model"
-subject: Introduction to Information Technology
-subject_slug: introduction-to-information-technology
 ---
 
 **Full Marks: 60**\
