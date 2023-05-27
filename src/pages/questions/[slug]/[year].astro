@@ -14,7 +14,8 @@ export async function getStaticPaths() {
   const questionEntries = await getCollection("questions");
 
   const questionEntriesWithSubjects = questionEntries.map((question) => {
-    const subject = subjects.find((subject) => subject.slug === question.data.subject_slug);
+    const subjectSlug = question.slug.split("/")[0];
+    const subject = subjects.find((subject) => subject.slug === subjectSlug);
     return { ...question, subject };
   });
 
