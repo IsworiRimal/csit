@@ -32,8 +32,6 @@ const questionCollection = defineCollection({
   schema: z.object({
     draft: z.boolean(),
     year: z.string(),
-    subject: z.string(),
-    subject_slug: z.string(),
     tags: z.array(z.string()).optional(),
   }),
 });

@@ -10,7 +10,8 @@ import { ucFirst } from "@utils/all";
 export async function getStaticPaths() {
   const questionEntries = await getCollection("questions");
   const questionEntriesWithSubjects = questionEntries.map((question) => {
-    const subject = subjects.find((subject) => subject.slug === question.data.subject_slug);
+    const subjectSlug = question.slug.split("/")[0];
+    const subject = subjects.find((subject) => subject.slug === subjectSlug);
     return { ...question, subject };
   });
 
@@ -23,8 +24,9 @@ export async function getStaticPaths() {
 const { question } = Astro.props;
 
 const questionEntries = await getCollection("questions");
+console.log(questionEntries[0].slug, question.subject.slug);
 const questionOfThisSubject = questionEntries.filter(
-  (q) => q.data.subject_slug === question.data.subject_slug
+  (q) => q.slug.split("/")[0] === question.subject.slug
 );
 questionOfThisSubject.reverse();
 ---
