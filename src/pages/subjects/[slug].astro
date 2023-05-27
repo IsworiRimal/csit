@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 const { subject } = Astro.props;
 
 const questionEntries = await getCollection("questions");
-const questionOfThisSubject = questionEntries.filter((q) => q.data.subject_slug === subject.slug);
+const questionOfThisSubject = questionEntries.filter((q) => q.slug.split("/")[0] === subject.slug);
 ---
 
 <Layout title={subject.title}>
