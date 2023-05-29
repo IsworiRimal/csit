@@ -1,127 +1,62 @@
-# Astroship - Astro Starter Template 🛸
+<p align="center">
+    <a href="https://bsccsitnepal.com">
+        <img src="public/favicons/favicon-150x150.png" align="center" alt="bsccsitnepal-icon"/>
+    </a>
+</p>
+<h1 align="center" style="border: 0;"> Bsc Csit Nepal </h1>
 
-Astroship is a starter template for startups, marketing websites, landing pages & blog. Built with Astro & TailwindCSS.
+[Bsc Csit Nepal](https://bsccsitnepal.com) is a opensource initiative to make a single collection of CSIT related materials. It contains the Cirriculam Structure, Syllabus, Old Questions and more. It is a **PWA app** and has an **Offline** capability.
 
-This Free Template is sponsored by [Web3Templates](https://web3templates.com)
+## Table Of Contents
 
-## Live Demo
+- [Details](#details)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Author](#author)
+- [Contribution](#contribution)
+- [License](#license)
 
-### [https://astroship.web3templates.com/](https://astroship.web3templates.com/)
+## Details
 
-### [Download Astroship Template](https://web3templates.com/templates/astroship-starter-website-template-for-astro)
+1. Production Url : [https://bsccsitnepal.com](https://bsccsitnepal.com)
+2. Development Url : [https://dev.bsccsitnepal.com](https://dev.bsccsitnepal.com)
+3. Hosted At : [Netlify](https://netlify.com)
+4. Framework : [Astro](https://astro.build)
 
-## Deploy this template
+## Prerequisites
 
-You can instantly clone this to your GitHub and deploy the site by clicking the below buttons to deploy to your chosen providers!
-
-Click here to deploy on Vercel:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsurjithctly%2Fastroship&project-name=astroship&repository-name=astroship&demo-title=Astroship%20-%20Astro%20Starter%20Template&demo-description=Astroship%20is%20a%20starter%20template%20for%20startups%2C%20marketing%20websites%20%26%20landing%20pages.%20Built%20with%20Astro%2C%20TailwindCSS&demo-url=https%3A%2F%2Fastroship.web3templates.com%2F&demo-image=https%3A%2F%2Fuser-images.githubusercontent.com%2F1884712%2F200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
-
-Click here to deploy on Netlify:
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/surjithctly/astroship)
-
-## Preview
-
-![image](https://user-images.githubusercontent.com/1884712/200831799-10ef2456-a02e-4068-b580-4b5326f0b33b.png)
-
-### Pagespeed Score
-
-[![pagespeed](https://user-images.githubusercontent.com/1884712/210250214-7aa98167-7993-4b90-8138-326b8fa0c223.png)](https://pagespeed.web.dev/report?url=https%3A%2F%2Fastroship.web3templates.com%2F)
-
+To run this project, **NodeJS** and **yarn** should be installed on your system.
 
 ## Installation
 
-If you are reading this on github, you can click on the "Use this template" button above to create a new repository from astroship to your account. Then you can do a `git clone` to clone it to your local system.
+1. Fork this repository.
 
-Alternatively, you can clone the project directly from this repo to your local system.
+   https://github.com/bsccsitnepal/bsccsitnepal/fork
 
-### 1. Clone the repo
+2. `yarn`
+3. Copy `.env.example` to `.env`
+4. Fill all variable values.
+5. `yarn build`
+6. `yarn start`
 
-```bash
-git clone https://github.com/surjithctly/astroship.git myProjectName
-# or
-git clone https://github.com/surjithctly/astroship.git .
-```
+## Author
 
-The `.` will clone it to the current directory so make sure you are inside your project folder first.
+**Author Name** &nbsp; : &nbsp; Shree Krishna Lamichhane <br>
+**Author URI** &nbsp; &nbsp; &nbsp; : &nbsp; [shreekrishnalamichhane.com.np](https://site.shreekrishnalamichhane.com.np) <br>
+**GitHub URI** &nbsp; &nbsp; &nbsp; : &nbsp; [shreekrishnalamichhane](https://github.shreekrishnalamichhane.com.np)
 
-### 2. Install Dependencies
+## Contribution
 
-```bash
-npm install
-# or
-yarn install
-# or (recommended)
-pnpm install
-```
+This project is to help CSIT students to find all the academic materials needed. If you want to contribute, pull requests are always welcome.
 
-### 3. Start development Server
+Check the [installation](#installation) section to start contributing to this project.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or (recommended)
-pnpm dev
-```
+For contributions, a valid **pull request** should be created, which will be reviewed and then merged.
 
-### Preview & Build
+## License
 
-```bash
-npm run preview
-npm run build
-# or
-yarn preview
-yarn build
-# or (recommended)
-pnpm preview
-pnpm build
-```
+[![License: MIT](https://img.shields.io/badge/License-GPL3.0-red.svg)](https://github.com/bsccsitnepal/bsccsitnepal/blob/master/LICENSE)
 
-We recommend using [pnpm](https://pnpm.io/) to save disk space on your computer.
+---
 
-### Other Commands
-
-```bash
-pnpm astro ...
-pnpm astro add
-pnpm astro --help
-```
-
-## Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   └── ...
-├── src/
-│   ├── components/
-│   │   └── ...
-│   ├── layouts/
-│   │   └── ...
-│   └── pages/
-│       └── ...
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## TailwindCSS
-
-TailwindCSS is already configured in this repo, so you can start using it without any installation.
-
-## Credits
-
-[Hero Illustration](https://www.figma.com/community/file/1108400791662599811) by [Streamline](https://www.streamlinehq.com/)
-
-## 👀 Want to learn more?
-
-Feel free to check out [Astro Docs](https://docs.astro.build) or jump into our [Discord Chat](https://web3templates.com/discord).
-
-[![Built with Astro](https://astro.badg.es/v1/built-with-astro.svg)](https://astro.build)
+Thank you for using this documentation. If you love this project give it a [star](https://github.com/bsccsitnepal/bsccsitnepal).
