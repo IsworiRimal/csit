@@ -8,6 +8,13 @@ const sw = await generateSW({
     swDest: 'dist/sw.js',
     maximumFileSizeToCacheInBytes: 5000000,
     navigateFallback: '/offline/index.html',
+    mode: 'production',
+    runtimeCaching: [
+        {
+            urlPattern: new RegExp('.*'),
+            handler: 'NetworkFirst',
+        },
+    ],
 });
 
 console.log(sw);
