@@ -1,29 +1,82 @@
 {
+    "id": "com.bsccsitnepal.app",
     "name": "Bsc Csit Nepal",
     "short_name": "Bsc Csit Nepal",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#DF2D2D",
+    "description": "CSIT resources at your fingertips.",
     "lang": "en",
+    "dir": "ltr",
+    "theme_color": "#DF2D2D",
+    "background_color": "#ffffff",
+    "orientation": "portrait",
     "scope": "/",
-    "description": "",
+    "prefer_related_applications": false,
+    "categories": [
+        "books",
+        "education",
+        "news",
+        "social"
+    ],
+    "edge_side_panel": {
+        "preferred_width": 400
+    },
     "icons": [
         {
             "src": "/favicons/favicon-192x192.png",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any"
         },
         {
             "src": "/favicons/favicon-512x512.png",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any"
         },
         {
-            "src": "/favicons/favicon-192x192.png",
-            "sizes": "192x192",
+            "src": "/favicons/favicon-1024x1024.png",
+            "sizes": "1024x1024",
             "type": "image/png",
-            "purpose": "any maskable"
+            "purpose": "maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/screenshots/desktop/home.png",
+            "sizes": "1905x940",
+            "type": "image/png",
+            "description": "Home page of the application"
+        },
+        {
+            "src": "/screenshots/desktop/about.png",
+            "sizes": "1905x940",
+            "type": "image/png",
+            "description": "About page of the application"
+        },
+        {
+            "src": "/screenshots/desktop/cirriculum.png",
+            "sizes": "1905x940",
+            "type": "image/png",
+            "description": "Cirriculum page of the application"
+        },
+        {
+            "src": "/screenshots/desktop/semesters.png",
+            "sizes": "1905x940",
+            "type": "image/png",
+            "description": "Semesters lists page of the application"
+        },
+        {
+            "src": "/screenshots/desktop/syllabus.png",
+            "sizes": "1905x940",
+            "type": "image/png",
+            "description": "Syllabus page of the application"
+        },
+        {
+            "src": "/screenshots/desktop/questions.png",
+            "sizes": "1905x940",
+            "type": "image/png",
+            "description": "Questions page of the application"
         }
     ],
     "shortcuts": [
@@ -51,5 +104,15 @@
                 }
             ]
         }
+    ],
+    "launch_handler": {
+        "client_mode": [
+            "navigate-existing, auto"
+        ]
+    },
+    "handle_links": "preferred",
+    "display_override": [
+        "window-controls-overlay",
+        "standalone"
     ]
 }
