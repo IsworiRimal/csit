@@ -54,7 +54,3 @@ A student eligible to study the B.Sc. CSIT course should collect and submit the 
 1. The Admission Form and Entrance Model Questions can be received from any of the B.Sc. CSIT colleges.
 2. Students do not need to fill up the TU Admission Form in more than one college. Form filled from one college will be valid for all colleges/campuses.
 3. Students of Grade 12 Supplementary Exam can also fill up the TU Admission Form but such students should present the Academic Transcript of Passing 10+2/Intermediate level before publication of entrance result, otherwise the entrance examination result of such students will not be published.
-
-<hr>
-
-Some information referenced from : [edusanjal.com](https://edusanjal.com/course/bsc-computer-science-and-information-technology-bsc-csit-tribhuvan-university)
