@@ -1,3 +1,21 @@
+---
+import { MenuItems } from "astro-navbar";
+const menuitems = [
+  {
+    title: "Privacy",
+    path: "/privact-policy/",
+  },
+  {
+    title: "Facebook",
+    path: "//facebook.bsccsitnepal.com",
+  },
+  {
+    title: "Instagram",
+    path: "//instagram.bsccsitnepal.com",
+  },
+];
+---
+
 <footer class="my-20">
   <p class="text-center text-sm text-slate-500">
     Copyright © {new Date().getFullYear()} Bsc Csit Nepal. All rights reserved.
@@ -11,4 +29,23 @@
       Bsc Csit Nepal
     </a>
   </p>
+  <MenuItems class="w-full lg:w-auto mt-5 flex justify-center">
+    <ul class="flex flex-row gap-3">
+      {
+        menuitems.map((item) => (
+          <>
+            {item && (
+              <li>
+                <a
+                  href={item.path}
+                  class="flex lg:px-3 py-2 text-sm text-gray-400 hover:text-gray-900 text-center">
+                  {item.title}
+                </a>
+              </li>
+            )}
+          </>
+        ))
+      }
+    </ul>
+  </MenuItems>
 </footer>
