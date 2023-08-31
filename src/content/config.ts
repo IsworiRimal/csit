@@ -10,6 +10,8 @@ const blogsCollection = defineCollection({
     image: z.object({
       src: z.string(),
       alt: z.string(),
+      width: z.number(),
+      height: z.number(),
     }),
     publishDate: z.string().transform(str => new Date(str)),
     author: z.string().default('BscCsitNepal'),
