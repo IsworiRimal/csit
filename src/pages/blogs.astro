@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
-import { Picture } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 // Filter blog entries with 'draft: false' & date before current date
 const publishedBlogEntries = await getCollection("blogs", ({ data }) => {
@@ -37,15 +37,12 @@ publishedBlogEntries.sort(function (a, b) {
               <li>
                 <a href={`/blogs/${blogPostEntry.slug}/`}>
                   <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-                    <Picture
+                    <Image
                       src={blogPostEntry.data.image.src}
-                      alt={blogPostEntry.data.image.alt}
-                      sizes="(max-width: 800px) 100vw, 800px"
-                      widths={[200, 400, 800]}
-                      aspectRatio="16:9"
-                      background="#ffffff"
-                      fit="cover"
-                      position="center"
+                      alt="hi"
+                      height={blogPostEntry.data.image.height}
+                      width={blogPostEntry.data.image.width}
+                      fetchpriority={"high"}
                       loading={index <= 2 ? "eager" : "lazy"}
                       decoding={index <= 2 ? "sync" : "async"}
                       class="w-full rounded-md"
