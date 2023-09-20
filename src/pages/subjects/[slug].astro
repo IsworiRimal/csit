@@ -1,6 +1,6 @@
 ---
+const { align = "center" } = Astro.props;
 import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
 import Subjectinfo from "@components/ui/subjectinfo.astro";
 import Layout from "@layouts/Layout.astro";
 import subjects from "../../data/subjects.json";
@@ -22,10 +22,14 @@ const questionOfThisSubject = questionEntries.filter((q) => q.slug.split("/")[0]
 
 <Layout title={subject.title}>
   <Container>
-    <Sectionhead>
-      <Fragment slot="title">{subject.title}</Fragment>
-      <Fragment slot="desc"></Fragment>
-    </Sectionhead>
+    <div class:list={["mt-16", align === "center" && "text-center"]}>
+      <h1
+        class="text-4xl lg:text-5xl font-bold lg:tracking-tight"
+        transition:name={`subject-${subject.slug}`}>
+        {subject.title}
+      </h1>
+      <p class="text-lg mt-4 text-slate-600"></p>
+    </div>
     <div class="grid grid-cols-1 lg:grid-cols-3 mt-16">
       <main class="container mx-auto col-span-2">
         <a

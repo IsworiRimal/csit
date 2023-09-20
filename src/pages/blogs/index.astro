@@ -19,7 +19,7 @@ publishedBlogEntries.sort(function (a, b) {
 <Layout title="Blog">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Our Blog</Fragment>
+      <Fragment slot="title">Blog</Fragment>
       <Fragment slot="desc"></Fragment>
     </Sectionhead>
     <main class="mt-16">
@@ -48,15 +48,21 @@ publishedBlogEntries.sort(function (a, b) {
                       class="w-full rounded-md"
                     />
                     <div>
-                      <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+                      <span
+                        class="text-blue-400 uppercase tracking-wider text-sm font-medium"
+                        transition:name={`blog-${blogPostEntry.data.category}-misc`}>
                         {blogPostEntry.data.category}
                       </span>
 
-                      <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
+                      <h2
+                        class="text-3xl font-semibold leading-snug tracking-tight mt-1"
+                        transition:name={`blog-${blogPostEntry.data.title}`}>
                         {blogPostEntry.data.title}
                       </h2>
 
-                      <div class="flex gap-2 mt-3">
+                      <div
+                        class="flex gap-2 mt-3"
+                        transition:name={`blog-${blogPostEntry.data.title}-misc`}>
                         <span class="text-gray-400">{blogPostEntry.data.author}</span>
                         <span class="text-gray-400">• </span>
                         <time

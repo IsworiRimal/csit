@@ -1,6 +1,6 @@
 ---
+const { align = "center" } = Astro.props;
 import Container from "@components/container.astro";
-import Sectionhead from "@components/sectionhead.astro";
 import Layout from "@layouts/Layout.astro";
 import semesters from "../../data/semesters.json";
 import subjects from "../../data/subjects.json";
@@ -24,10 +24,16 @@ let electiveSubjects = currentSemesterSubjects.filter((subject) => subject.elect
 
 <Layout title={semester.title}>
   <Container>
-    <Sectionhead>
-      <Fragment slot="title">{semester.title}</Fragment>
-      <Fragment slot="desc">{semester.description}</Fragment>
-    </Sectionhead>
+    <div class:list={["mt-16", align === "center" && "text-center"]}>
+      <h1
+        class="text-4xl lg:text-5xl font-bold lg:tracking-tight"
+        transition:name={`semester-${semester.slug}`}>
+        {semester.title}
+      </h1>
+      <p class="text-lg mt-4 text-slate-600">
+        {semester.description}
+      </p>
+    </div>
     <main class="container mx-auto mt-16">
       <div class="grid grid-cols-1 lg:grid-cols-2">
         {
@@ -37,7 +43,11 @@ let electiveSubjects = currentSemesterSubjects.filter((subject) => subject.elect
               href={`/subjects/${subject.slug}/`}>
               <div class="flex py-4 text-gray-500 gap-5">
                 <h1 class="text-xl font-bold text-gray-900">{index + 1}.</h1>
-                <h3 class="text-lg font-bold text-gray-900 sm:text-xl">{subject.title}</h3>
+                <h3
+                  class="text-lg font-bold text-gray-900 sm:text-xl"
+                  transition:name={`subject-${subject.slug}`}>
+                  {subject.title}
+                </h3>
               </div>
             </a>
           ))
@@ -58,7 +68,11 @@ let electiveSubjects = currentSemesterSubjects.filter((subject) => subject.elect
                   href={`/subjects/${subject.slug}/`}>
                   <div class="flex py-4 text-gray-500 gap-5">
                     <h1 class="text-xl font-bold text-gray-900">{index + 1}.</h1>
-                    <h3 class="text-lg font-bold text-gray-900 sm:text-xl">{subject.title}</h3>
+                    <h3
+                      class="text-lg font-bold text-gray-900 sm:text-xl"
+                      transition:name={`subject-${subject.slug}`}>
+                      {subject.title}
+                    </h3>
                   </div>
                 </a>
               ))}
