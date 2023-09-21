@@ -1,5 +1,5 @@
 ---
-import Link from "./ui/link.astro";
+
 ---
 
 <div
@@ -21,31 +21,4 @@ import Link from "./ui/link.astro";
       9823404657
     </button>
   </div>
-  <script>
-    let deferredPrompt: any;
-
-    // Check if the PWA can be installed
-    window.addEventListener("beforeinstallprompt", (event) => {
-      event.preventDefault();
-      deferredPrompt = event;
-      document.querySelector("#installButton")?.removeAttribute("disabled");
-    });
-
-    // Handle button click event
-    document.querySelector("#installButton")?.addEventListener("click", () => {
-      if (deferredPrompt) {
-        // Show the installation prompt
-        deferredPrompt.prompt();
-
-        // Wait for the user to respond to the prompt
-        deferredPrompt.userChoice.then((choiceResult: any) => {
-          choiceResult.outcome === "accepted"
-            ? console.log("PWA installed")
-            : console.log("PWA installation canceled");
-          // Reset the deferred prompt
-          deferredPrompt = null;
-        });
-      }
-    });
-  </script>
 </div>

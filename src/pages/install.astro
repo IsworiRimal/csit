@@ -1,0 +1,120 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Link from "@components/ui/link.astro";
+
+type App = {
+  draft: boolean;
+  title: string;
+  image: string;
+  imageAlt?: string;
+  description: string;
+  link: string;
+  buttonImage: string;
+  onclick?: string;
+};
+
+const apps: App[] = [
+  {
+    draft: false,
+    title: "Progressive Web App",
+    image: "/assets/mockups/14.png",
+    imageAlt: "Progressive Web App",
+    description: "Our PWA app can be installed on any device as a native app",
+    link: "#",
+    buttonImage: "/assets/app-stores/pwa-1.png",
+    onclick: "PWAInstall()",
+  },
+  {
+    draft: true,
+    title: "Google Play Store",
+    description: "Our Android app is nearly ready.",
+    image: "/assets/mockups/10.png",
+    imageAlt: "Google Play Store",
+    link: "#",
+    buttonImage: "/assets/app-stores/google-playstore-1.png",
+  },
+  {
+    draft: true,
+    title: "Apple App Store",
+    description: "Our iOS app is on the way.",
+    image: "/assets/mockups/4.png",
+    imageAlt: "Apple AppStore",
+    link: "#",
+    buttonImage: "/assets/app-stores/apple-appstore-1.png",
+  },
+  {
+    draft: true,
+    title: "Microsoft Store",
+    description: "Our Windows app is on the way.",
+    image: "/assets/mockups/18.png",
+    imageAlt: "Microsoft Store",
+    link: "#",
+    buttonImage: "/assets/app-stores/microsoft-store.png",
+  },
+];
+
+// Sort apps by draft status, so that draft apps are at the end of the list
+const sortApps: App[] = [...apps.filter((app) => !app.draft), ...apps.filter((app) => app.draft)];
+---
+
+<Layout title="Installation">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Installation</Fragment>
+      <Fragment slot="desc">Install our apps on various platforms</Fragment>
+    </Sectionhead>
+    <div class="mt-5 lg:mt-16">
+      <>
+        {
+          sortApps.map((app, index) => (
+            <>
+              {
+                <section
+                  class={
+                    index % 2 === 0
+                      ? "overflow-hidden flex flex-col-reverse md:flex-row sm:items-center pb-20"
+                      : "overflow-hidden flex flex-col-reverse md:flex-row-reverse sm:items-center pb-20"
+                  }>
+                  <div class="p-8 md:p-12 lg:px-16 lg:py-24 w-full md:w-1/2">
+                    <div class="mx-auto max-w-xl text-center">
+                      <h2 class="text-2xl font-bold text-gray-900 md:text-3xl">{app.title}</h2>
+
+                      <p class="py-3 text-xs md:text-lg text-gray-500 md:mt-4 md:block">
+                        {app.description}
+                      </p>
+
+                      <div class="flex mt-4 md:mt-8 justify-center">
+                        {app.draft ? (
+                          <button
+                            class="rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200 px-5 py-2.5 bg-white border-2 border-black hover:bg-gray-100 text-black flex gap-1 items-center justify-center"
+                            disabled>
+                            Coming Soon
+                          </button>
+                        ) : (
+                          <a href={app.link} class="row-span-2 col-span-1" onclick={app.onclick}>
+                            <img class="w-[200px] m-0" src={app.buttonImage} alt={app.title} />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    class={
+                      index % 2 === 0
+                        ? "h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end md:h-[calc(100%_-_4rem)] md:rounded-e-[30px] md:w-1/2"
+                        : "h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end md:h-[calc(100%_-_4rem)] md:rounded-s-[30px] md:w-1/2"
+                    }
+                    src={app.image}
+                    alt={app.imageAlt}
+                  />
+                </section>
+              }
+            </>
+          ))
+        }
+      </>
+    </div>
+  </Container>
+</Layout>
