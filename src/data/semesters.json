@@ -3,65 +3,56 @@
     "id": 1,
     "title": "First Semester",
     "slug": "first-semester",
-    "description": "This is a first semester",
+    "description": "",
     "electives": []
   },
   {
     "id": 2,
     "title": "Second Semester",
     "slug": "second-semester",
-    "description": "This is a second semester",
+    "description": "",
     "electives": []
   },
   {
     "id": 3,
     "title": "Third Semester",
     "slug": "third-semester",
-    "description": "This is a third semester",
+    "description": "",
     "electives": []
   },
   {
     "id": 4,
     "title": "Fourth Semester",
     "slug": "fourth-semester",
-    "description": "This is a fourth semester",
+    "description": "",
     "electives": []
   },
   {
     "id": 5,
     "title": "Fifth Semester",
     "slug": "fifth-semester",
-    "description": "This is a fifth semester",
-    "electives": [
-      "Elective I"
-    ]
+    "description": "",
+    "electives": ["Elective I"]
   },
   {
     "id": 6,
     "title": "Sixth Semester",
     "slug": "sixth-semester",
-    "description": "This is a sixth semester",
-    "electives": [
-      "Elective II"
-    ]
+    "description": "",
+    "electives": ["Elective II"]
   },
   {
     "id": 7,
     "title": "Seventh Semester",
     "slug": "seventh-semester",
-    "description": "This is a seventh semester",
-    "electives": [
-      "Elective III"
-    ]
+    "description": "",
+    "electives": ["Elective III"]
   },
   {
     "id": 8,
     "title": "Eighth Semester",
     "slug": "eighth-semester",
-    "description": "This is a eighth semester",
-    "electives": [
-      "Elective IV",
-      "Elective V"
-    ]
+    "description": "",
+    "electives": ["Elective IV", "Elective V"]
   }
 ]

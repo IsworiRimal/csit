@@ -5,6 +5,7 @@ import Sectionhead from "@components/sectionhead.astro";
 import semesters from "../data/semesters.json";
 import subjects from "../data/subjects.json";
 import { groupBy } from "@utils/all";
+import Print from "@components/print.astro";
 
 let grouped = groupBy(subjects, "semester_id");
 
@@ -129,6 +130,7 @@ let total = semesters.map((semester, index) => {
             </>
           ))
         }
+        <Print />
       </main>
     </div>
   </Container>
