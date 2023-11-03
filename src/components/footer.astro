@@ -4,14 +4,17 @@ const menuitems = [
   {
     title: "Privacy",
     path: "/privacy-policy/",
+    target: "",
   },
   {
     title: "Facebook",
     path: "//facebook.bsccsitnepal.com",
+    target: "_blank",
   },
   {
     title: "Instagram",
     path: "//instagram.bsccsitnepal.com",
+    target: "_blank",
   },
 ];
 ---
@@ -26,10 +29,10 @@ const menuitems = [
       target="_blank"
       rel="noopener"
       class="underline hover:underline">
-      Bsc Csit Nepal
+      Bsc Csit Nepal (bsccsitnepal.com)
     </a>
   </p>
-  <MenuItems class="w-full lg:w-auto mt-5 flex justify-center">
+  <MenuItems class="w-full lg:w-auto mt-5 flex justify-center print:hidden">
     <ul class="flex flex-row gap-3">
       {
         menuitems.map((item) => (
@@ -38,6 +41,7 @@ const menuitems = [
               <li>
                 <a
                   href={item.path}
+                  target={item.target}
                   class="flex lg:px-3 py-2 text-sm text-gray-400 hover:text-gray-900 text-center">
                   {item.title}
                 </a>

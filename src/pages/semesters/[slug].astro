@@ -1,5 +1,4 @@
 ---
-const { align = "center" } = Astro.props;
 import Container from "@components/container.astro";
 import Layout from "@layouts/Layout.astro";
 import semesters from "../../data/semesters.json";
@@ -24,7 +23,7 @@ let electiveSubjects = currentSemesterSubjects.filter((subject) => subject.elect
 
 <Layout title={semester.title}>
   <Container>
-    <div class:list={["mt-16", align === "center" && "text-center"]}>
+    <div class:list={["mt-16", "text-center"]}>
       <h1
         class="text-4xl lg:text-5xl font-bold lg:tracking-tight"
         transition:name={`semester-${semester.slug}`}>

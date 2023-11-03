@@ -84,4 +84,4 @@ We may update our Privacy Policy from time to time. Thus, we advise you to revie
 
 ## Contact Us
 
-If you have any questions or suggestions about our Privacy Policy, do not hesitate to [contact us](https://bsccsitnepal.com/contact).
+If you have any questions or suggestions about our Privacy Policy, do not hesitate to [contact us](/contact).

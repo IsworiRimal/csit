@@ -1,5 +1,4 @@
 ---
-const { align = "center" } = Astro.props;
 import Container from "@components/container.astro";
 import Subjectinfo from "@components/ui/subjectinfo.astro";
 import Layout from "@layouts/Layout.astro";
@@ -22,7 +21,7 @@ const questionOfThisSubject = questionEntries.filter((q) => q.slug.split("/")[0]
 
 <Layout title={subject.title}>
   <Container>
-    <div class:list={["mt-16", align === "center" && "text-center"]}>
+    <div class:list={["mt-16", "text-center"]}>
       <h1
         class="text-4xl lg:text-5xl font-bold lg:tracking-tight"
         transition:name={`subject-${subject.slug}`}>
